@@ -29,7 +29,6 @@ class _TabBarPageState extends State<TabBarPage> with SingleTickerProviderStateM
   List<Task> tasks ;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     tabController = TabController(length: 3, vsync: this);
   }
@@ -37,7 +36,6 @@ class _TabBarPageState extends State<TabBarPage> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       drawer: Drawer(),
       appBar: AppBar(
@@ -61,7 +59,6 @@ class _TabBarPageState extends State<TabBarPage> with SingleTickerProviderStateM
             child: TabBarView(
               controller: tabController,
               children: [AllTasks(tasks),CompleteTasks(),IncompleteTasks()],
-              // physics: NeverScrollableScrollPhysics(),
             ),
           ),
         ],
@@ -104,7 +101,6 @@ class _AllTasksState extends State<AllTasks> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       child: FutureBuilder<List<Task>>(
         future: DBHelper.dbHelper.selectAllTasks(),
@@ -155,7 +151,6 @@ class _CompleteTasksState extends State<CompleteTasks> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       child: FutureBuilder<List<Task>>(
         future: DBHelper.dbHelper.selectSpecificTask(1),
@@ -202,7 +197,6 @@ class _IncompleteTasksState extends State<IncompleteTasks> {
   }
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       child: FutureBuilder<List<Task>>(
         future: DBHelper.dbHelper.selectSpecificTask(0),
